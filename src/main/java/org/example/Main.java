@@ -10,10 +10,13 @@ public class Main {
         System.out.println(NumberFeature.sumOfNumberList(2352657));
 
 //        Find the largest number
-        System.out.println(NumberFeature.sortingLargetoSmall("15782324257946652478")[0]);
+        System.out.println(NumberFeature.sortingLargetoSmall("")[0]);
+
+//        Fibonacci sequence
+        System.out.println(Arrays.toString(NumberFeature.fibonacciSequence(2)));
 
 //        Sort number
-        System.out.println(Arrays.toString(NumberFeature.sortingSmalltoLarge("567125069566")));
+        System.out.println(Arrays.toString(NumberFeature.sortingSmalltoLarge("00567125069566")));
 
 //        Find the second-smallest number
         System.out.println(NumberFeature.sortingSmalltoLarge("674650266")[1]);

@@ -1,10 +1,15 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class NumberFeature {
 
     public static int sumOfNumberList(int number){
+
+        if (number < 1){
+            throw new ArithmeticException("Please input number larger than 0!");
+        }
 
         int sum = 0;
 
@@ -21,6 +26,11 @@ public class NumberFeature {
     }
 
     public static int[] sortingSmalltoLarge(String list){
+
+        if (list.length() < 1){
+            throw new IllegalArgumentException("Input cannot be blank!");
+        }
+
         String[] sortedNumber = list.split("");
 
         int[] arrayInteger = Arrays.stream(sortedNumber).mapToInt(Integer::parseInt).toArray();
@@ -41,6 +51,11 @@ public class NumberFeature {
     }
 
     public static int[] sortingLargetoSmall(String list){
+
+        if (list.length() < 1){
+            throw new IllegalArgumentException("Input cannot be blank!");
+        }
+
         String[] sortedNumber = list.split("");
 
         int[] arrayInteger = Arrays.stream(sortedNumber).mapToInt(Integer::parseInt).toArray();
@@ -60,5 +75,22 @@ public class NumberFeature {
         return arrayInteger;
     }
 
+    public static int[] fibonacciSequence(int number){
+
+        if (number < 0){
+            throw new ArithmeticException("The number must be larger than 0!");
+        }
+
+        int[] fibonacciNumber = new int[number];
+        fibonacciNumber[0] = 0;
+        fibonacciNumber[1] = 1;
+
+        for (int i = 2; i < number; i++){
+            fibonacciNumber[i] = fibonacciNumber[i - 1] + fibonacciNumber[i - 2];
+        }
+
+        return fibonacciNumber;
+
+    }
 
 }
