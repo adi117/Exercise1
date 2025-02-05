@@ -38,54 +38,54 @@ public class NumberFeature {
         return  true;
     }
 
-    public static int[] sortingSmalltoLarge(String list){
+    public static int[] sortingSmalltoLarge(int[] list){
 
-        if (list.length() < 1){
+        if (list.length < 1){
             throw new IllegalArgumentException("Input cannot be blank!");
         }
 
-        String[] sortedNumber = list.split("");
-
-        int[] arrayInteger = Arrays.stream(sortedNumber).mapToInt(Integer::parseInt).toArray();
-
         int temp = 0;
 
-        for (int i = 0; i < arrayInteger.length; i++){
-            for (int j = 1; j < arrayInteger.length; j++){
-                if (arrayInteger[j-1] > arrayInteger[j]){
-                    temp = arrayInteger[j-1];
-                    arrayInteger[j-1] = arrayInteger[j];
-                    arrayInteger[j] = temp;
+        for (int i = 0; i < list.length; i++){
+            for (int j = 1; j < list.length; j++){
+                if (list[j-1] > list[j]){
+                    temp = list[j-1];
+                   list[j-1] = list[j];
+                    list[j] = temp;
                 }
             }
         }
 
-        return arrayInteger;
+        return list;
     }
 
-    public static int[] sortingLargetoSmall(String list){
+    public static int[] sortingLargetoSmall(int[] list){
 
-        if (list.length() < 1){
+        if (list.length < 1){
             throw new IllegalArgumentException("Input cannot be blank!");
         }
 
-        String[] sortedNumber = list.split("");
-
-        int[] arrayInteger = Arrays.stream(sortedNumber).mapToInt(Integer::parseInt).toArray();
-
         int temp = 0;
 
-        for (int i = 0; i < arrayInteger.length; i++){
-            for (int j = 1; j < arrayInteger.length; j++){
-                if (arrayInteger[j-1] < arrayInteger[j]){
-                    temp = arrayInteger[j-1];
-                    arrayInteger[j-1] = arrayInteger[j];
-                    arrayInteger[j] = temp;
+        for (int i = 0; i < list.length; i++){
+            for (int j = 1; j < list.length; j++){
+                if (list[j-1] < list[j]){
+                    temp = list[j-1];
+                    list[j-1] = list[j];
+                    list[j] = temp;
                 }
             }
         }
 
-        return arrayInteger;
+        return list;
+    }
+
+    public static int findLargestNumber(int[] list){
+        return sortingLargetoSmall(list)[0];
+    }
+
+    public static int findSecondSmallesstNumber(int[] list){
+        return sortingSmalltoLarge(list)[1];
     }
 
     public static int[] fibonacciSequence(int number){
