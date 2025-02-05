@@ -21,7 +21,18 @@ public class NumberFeature {
         return sum;
     }
 
-    public static boolean isPrimeNumber(){
+    public static boolean isPrimeNumber(int number){
+
+        if (number < 2){
+            throw new ArithmeticException("Please input number larger than 1!");
+        }
+
+        for (int i = 2; i < number; i++){
+            if (number % i == 0){
+                return false;
+            }
+        }
+
         return  true;
     }
 
