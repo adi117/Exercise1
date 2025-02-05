@@ -108,22 +108,25 @@ public class NumberFeature {
 
     public static int calculate(String text){
 
-        String[] number = text.split(TextFeature.findSign(text));
+        String[] number = text.split(" \\" + TextFeature.findSign(text) +  " ");
 
         int result = 0;
 
         switch (TextFeature.findSign(text)){
-            case " / ":
+            case "/":
                 result = Integer.parseInt(number[0]) / Integer.parseInt(number[1]);
                 break;
-            case " * ":
+            case "*":
                 result = Integer.parseInt(number[0]) * Integer.parseInt(number[1]);
                 break;
-            case " - ":
+            case "-":
                 result = Integer.parseInt(number[0]) - Integer.parseInt(number[1]);
                 break;
-            case " + ":
+            case "+":
                 result = Integer.parseInt(number[0]) + Integer.parseInt(number[1]);
+                break;
+            default:
+                result = 0;
                 break;
         }
 

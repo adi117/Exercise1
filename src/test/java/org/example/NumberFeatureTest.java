@@ -29,8 +29,10 @@ class NumberFeatureTest {
     @Test
     @DisplayName("Simple Calculator")
     void testSimpleCalculator(){
-//        assertEquals(8, NumberFeature.calculate("5 + 3"));
+        assertEquals(8, NumberFeature.calculate("6 + 2"));
         assertEquals(5, NumberFeature.calculate("10 / 2"));
+        assertEquals(3, NumberFeature.calculate("1 * 3"));
+        assertEquals(44, NumberFeature.calculate("46 - 2"));
     }
 
     @Test
