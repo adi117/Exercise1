@@ -1,5 +1,7 @@
 package org.example;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -101,6 +103,31 @@ public class NumberFeature {
         }
 
         return fibonacciNumber;
+
+    }
+
+    public static int calculate(String text){
+
+        String[] number = text.split(TextFeature.findSign(text));
+
+        int result = 0;
+
+        switch (TextFeature.findSign(text)){
+            case " / ":
+                result = Integer.parseInt(number[0]) / Integer.parseInt(number[1]);
+                break;
+            case " * ":
+                result = Integer.parseInt(number[0]) * Integer.parseInt(number[1]);
+                break;
+            case " - ":
+                result = Integer.parseInt(number[0]) - Integer.parseInt(number[1]);
+                break;
+            case " + ":
+                result = Integer.parseInt(number[0]) + Integer.parseInt(number[1]);
+                break;
+        }
+
+        return result;
 
     }
 

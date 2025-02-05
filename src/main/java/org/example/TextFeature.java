@@ -68,4 +68,9 @@ public class TextFeature {
         return count;
 
     }
+
+    public static String findSign(String text){
+        return text.replaceAll("[0-9]", "");
+    }
+
 }

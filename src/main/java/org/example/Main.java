@@ -15,6 +15,9 @@ public class Main {
 //        Find the largest number
         System.out.println(NumberFeature.sortingLargetoSmall("0")[0]);
 
+//        Calculator
+        System.out.println(NumberFeature.calculate("10 / 2"));
+
 //        Reverse text
         System.out.println(TextFeature.reverseText("halo semuanya"));
 
